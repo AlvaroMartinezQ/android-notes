@@ -1,3 +1,13 @@
 <resources>
+    <!-- App intro strings -->
     <string name="app_name">My Notes</string>
+    <string name="slogan">Think it... Note it... Save it!</string>
+    <string name="slogan_name">NOTES APP</string>
+    <!-- Button strings -->
+    <string name="btn_start">Start</string>
+    <string name="btn_help">Help</string>
+    <string name="btn_new_note">New note</string>
+    <string name="btn_all_notes">All notes</string>
+    <!-- Text strings -->
+    <string name="txt_welcome">Welcome back!</string>
 </resources>
