@@ -10,4 +10,8 @@
     <string name="btn_all_notes">All notes</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
+    <!-- Input strings -->
+    <string name="input_title">Title</string>
+    <string name="input_description">Description</string>
+    <string name="input_tags">Tags</string>
 </resources>
