@@ -14,13 +14,11 @@ import com.urjc.android_notes.generic.GenericValues;
 import java.util.ArrayList;
 
 public class NoteNewEdit extends GenericValues {
-    /*
-    Class to create or edit a note
-     */
+    /* -- Class to create or edit a note -- */
 
-    ListView tagList;
-    ArrayList<String> tags;
-    ArrayAdapter<String> adapter;
+    static ListView tagList;
+    static ArrayList<String> tags;
+    static TagListAdapter adapter;
 
     EditText newTagText;
     ImageView addTagBtn;
@@ -34,11 +32,9 @@ public class NoteNewEdit extends GenericValues {
         newTagText = findViewById(R.id.newTag);
         addTagBtn = findViewById(R.id.newTagBtn);
 
-        tagList.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
-        tagList.setStackFromBottom(true);
-
         tags = new ArrayList<>();
 
+        /*
         tagList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -47,10 +43,9 @@ public class NoteNewEdit extends GenericValues {
                 return false;
             }
         });
+        */
 
-        adapter = new ArrayAdapter<>(
-                getApplicationContext(), android.R.layout.simple_list_item_1, tags
-        );
+        adapter = new TagListAdapter(getApplicationContext(), tags);
         tagList.setAdapter(adapter);
 
         addTagBtn.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +68,7 @@ public class NoteNewEdit extends GenericValues {
         adapter.notifyDataSetChanged();
     }
 
-    public void removeTag(int i) {
+    public static void removeTag(int i) {
         tags.remove(i);
         adapter.notifyDataSetChanged();
     }
