@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.406" />
 
     <Button
         android:id="@+id/buttonHelp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonStart"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.134" />
 
     <View
         android:id="@+id/divider"

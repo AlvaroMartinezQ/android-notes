@@ -8,8 +8,11 @@
     <string name="btn_help">Help</string>
     <string name="btn_new_note">New note</string>
     <string name="btn_all_notes">All notes</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_back">Back</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
+    <string name="txt_edit">New and edit notes</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>

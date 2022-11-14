@@ -22,15 +22,6 @@
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/view"
-        android:layout_width="22sp"
-        android:layout_height="22sp"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="18sp"
-        android:layout_toLeftOf="@id/remove"
-        android:src="@drawable/view" />
-
-    <ImageView
         android:id="@+id/remove"
         android:layout_width="22sp"
         android:layout_height="22sp"

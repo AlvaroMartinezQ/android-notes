@@ -43,8 +43,9 @@ public class TagListAdapter extends ArrayAdapter<String> {
             name.setText(tags.get(position));
 
             // Buttons and their onClick methods
-            ImageView viewBtn = convertView.findViewById(R.id.view);
+            // ImageView viewBtn = convertView.findViewById(R.id.view);
             ImageView deleteBtn = convertView.findViewById(R.id.remove);
+            /*
             viewBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -52,6 +53,7 @@ public class TagListAdapter extends ArrayAdapter<String> {
                     // TODO: change it to another view of custom list adapter
                 }
             });
+            */
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
