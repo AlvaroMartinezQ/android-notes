@@ -113,6 +113,7 @@ public class NoteNewEdit extends GenericValues {
             toastIt("Please complete all values.");
         }
 
+        // DEBUG
         List<Note> notes;
         notes=nd.getAllNotes();
         toastIt(notes.size() + "");

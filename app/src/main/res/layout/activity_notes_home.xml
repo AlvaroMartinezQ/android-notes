@@ -26,32 +26,33 @@
         android:id="@+id/buttonNewNote"
         android:layout_width="173dp"
         android:layout_height="54dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#DEA049"
         android:fontFamily="casual"
         android:onClick="newOrEdit"
         android:text="@string/btn_new_note"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAllNotes" />
 
     <Button
         android:id="@+id/buttonAllNotes"
         android:layout_width="173dp"
         android:layout_height="54dp"
+        android:layout_marginBottom="364dp"
         android:backgroundTint="#DEA049"
         android:fontFamily="casual"
+        android:onClick="all"
         android:text="@string/btn_all_notes"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNewNote"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/divider2"

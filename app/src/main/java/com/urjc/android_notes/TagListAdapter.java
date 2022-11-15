@@ -42,18 +42,8 @@ public class TagListAdapter extends ArrayAdapter<String> {
             TextView name = convertView.findViewById(R.id.name);
             name.setText(tags.get(position));
 
-            // Buttons and their onClick methods
-            // ImageView viewBtn = convertView.findViewById(R.id.view);
+            // Delete button and its onClick method
             ImageView deleteBtn = convertView.findViewById(R.id.remove);
-            /*
-            viewBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Code to redirect in all notes page.
-                    // TODO: change it to another view of custom list adapter
-                }
-            });
-            */
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

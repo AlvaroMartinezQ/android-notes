@@ -13,6 +13,7 @@
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
     <string name="txt_edit">New and edit notes</string>
+    <string name="txt_all">All notes</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>

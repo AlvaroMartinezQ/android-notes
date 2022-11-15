@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="13sp">
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/note_title"
+        android:layout_marginBottom="2sp"
+        android:textColor="#DEA049"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="28sp"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/edit"
+        android:layout_width="22sp"
+        android:layout_height="22sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="102sp"
+        android:src="@drawable/pencil_edit" />
+
+    <ImageView
+        android:id="@+id/view"
+        android:layout_width="22sp"
+        android:layout_height="22sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="60sp"
+        android:src="@drawable/view" />
+
+    <ImageView
+        android:id="@+id/remove"
+        android:layout_width="22sp"
+        android:layout_height="22sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18sp"
+        android:src="@drawable/remove" />
+</RelativeLayout>

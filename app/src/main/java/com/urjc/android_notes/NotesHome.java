@@ -14,6 +14,11 @@ public class NotesHome extends GenericValues {
         setContentView(R.layout.activity_notes_home);
     }
 
+    public void all(View view) {
+        Intent allNotes = new Intent(this, NoteAll.class);
+        startActivity(allNotes);
+    }
+
     public void newOrEdit(View view) {
         Intent newNoteEdit = new Intent(this, NoteNewEdit.class);
         startActivity(newNoteEdit);
