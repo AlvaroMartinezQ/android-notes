@@ -2,11 +2,15 @@ package com.urjc.android_notes;
 
 import static com.urjc.android_notes.database.NotesRDatabase.getDatabase;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,6 +39,8 @@ public class NoteNewEdit extends GenericValues {
     EditText newTagText;
     ImageView addTagBtn;
 
+    private Note existingNote = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,16 +55,23 @@ public class NoteNewEdit extends GenericValues {
 
         tags = new ArrayList<>();
 
-        /*
-        tagList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                toastIt("Removed " + tags.get(i));
-                removeTag(i);
-                return false;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Note note = (Note) getIntent().getSerializableExtra("NOTE");
+            titleInput.setText(note.title);
+            descriptionInput.setText(note.description);
+            if (note.tags != "") {
+                // Split the tags by spaces: " " & add it into the tags
+                for (String s: note.tags.trim().split("\\s+")) {
+                    tags.add(s);
+                }
             }
-        });
-        */
+            existingNote = note;
+
+            Button addNote = findViewById(R.id.button_add);
+            addNote.setText("UPDATE");
+            addNote.setBackgroundColor(Color.parseColor("#DEA049"));
+        }
 
         adapter = new TagListAdapter(getApplicationContext(), tags);
         tagList.setAdapter(adapter);
@@ -89,8 +102,13 @@ public class NoteNewEdit extends GenericValues {
     }
 
     public void back(View view) {
-        Intent homeScreen = new Intent(this, NotesHome.class);
-        startActivity(homeScreen);
+        if (existingNote != null) {
+            Intent all = new Intent(this, NoteAll.class);
+            startActivity(all);
+        } else {
+            Intent home = new Intent(this, NotesHome.class);
+            startActivity(home);
+        }
     }
 
     public void saveNote(View view) {
@@ -101,6 +119,12 @@ public class NoteNewEdit extends GenericValues {
         String noteDescription = descriptionInput.getText().toString();
         if (!noteTitle.isEmpty() && !noteDescription.isEmpty()) {
             // Save the note
+            if (existingNote != null) {
+                // If it comes from the update button delete the note
+                // and create it again. Better solution would be to
+                // update the note ¯\_(ツ)_/¯
+                nd.deleteNote(existingNote);
+            }
             toastIt("Saving: " + noteTitle);
             String noteTags = "";
             for(String tag: tags) {
@@ -108,15 +132,19 @@ public class NoteNewEdit extends GenericValues {
             }
             Note note = new Note(noteTitle, noteDescription, noteTags.trim());
             nd.addNote(note);
+
+            // Redirect to all notes view
+            Intent allNotes = new Intent(this, NoteAll.class);
+            startActivity(allNotes);
         } else {
             // Inform of bad / empty parameters
             toastIt("Please complete all values.");
         }
 
         // DEBUG
-        List<Note> notes;
-        notes=nd.getAllNotes();
-        toastIt(notes.size() + "");
+        // List<Note> notes;
+        // notes=nd.getAllNotes();
+        // toastIt(notes.size() + "");
     }
 
 }

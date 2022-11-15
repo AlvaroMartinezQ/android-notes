@@ -6,10 +6,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity(tableName = "app_note")
-public class Note {
+public class Note implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull

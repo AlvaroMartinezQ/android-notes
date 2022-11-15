@@ -52,7 +52,7 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
                 public void onClick(View view) {
                     // Navigate to the edit Activity
                     Intent editNote = new Intent(view.getContext(), NoteNewEdit.class);
-                    // TODO: Pass on required params
+                    editNote.putExtra("NOTE", notes.get(position));
                     editNote.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     view.getContext().startActivity(editNote);
                 }

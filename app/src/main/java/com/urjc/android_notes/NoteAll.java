@@ -16,7 +16,7 @@ public class NoteAll extends GenericValues {
     static ListView noteList;
     static ArrayList<Note> notes;
     static NotesListAdapter adapter;
-    TextView noData;
+    static TextView noData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +40,21 @@ public class NoteAll extends GenericValues {
         } else {
             // Display a message if no notes exist in the app
             noData = findViewById(R.id.noData);
-            noData.setText("Create a new note first!");
-            noData.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stars, 0, 0, 0);
+            displayNoData();
         }
     }
 
     public static void removeNote(int position) {
         notes.remove(position);
         adapter.notifyDataSetChanged();
+        if (notes.size() <= 0) {
+            displayNoData();
+        }
+    }
+
+    public static void displayNoData() {
+        noData.setText("Create a new note first!");
+        noData.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stars, 0, 0, 0);
     }
 
 }
