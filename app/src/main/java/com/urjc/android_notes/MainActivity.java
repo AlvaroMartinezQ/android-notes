@@ -12,23 +12,14 @@ import com.urjc.android_notes.generic.GenericValues;
 
 public class MainActivity extends GenericValues {
 
-    public Button start;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+    }
+
+    public void login(View view) {
         setContentView(R.layout.activity_main);
-        start = this.findViewById(R.id.buttonStart);
-        /*
-        Button one = this.findViewById(R.id.btnTest);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.save);
-        one.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mp.start();
-            }
-        });
-         */
     }
 
     public void startApp(View view) {

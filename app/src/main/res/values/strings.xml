@@ -11,6 +11,7 @@
     <string name="btn_add">Add</string>
     <string name="btn_back">Back</string>
     <string name="btn_edit">Edit</string>
+    <string name="btn_filter">Filter</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
     <string name="txt_edit">New and edit notes</string>

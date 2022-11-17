@@ -31,8 +31,10 @@
         android:fontFamily="casual"
         android:onClick="newOrEdit"
         android:text="@string/btn_new_note"
+        android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:icon="@drawable/note_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAllNotes" />
@@ -46,13 +48,48 @@
         android:fontFamily="casual"
         android:onClick="all"
         android:text="@string/btn_all_notes"
+        android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:icon="@drawable/note_folder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.637" />
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="135dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="130dp"
+        android:backgroundTint="#DEA0ff"
+        android:fontFamily="casual"
+        android:onClick="back"
+        android:text="@string/btn_back"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:icon="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFilter" />
+
+    <Button
+        android:id="@+id/buttonFilter"
+        android:layout_width="173dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#DEA049"
+        android:fontFamily="casual"
+        android:text="@string/btn_filter"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNewNote" />
 
     <View
         android:id="@+id/divider2"

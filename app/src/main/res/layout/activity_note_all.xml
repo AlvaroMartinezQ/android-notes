@@ -34,12 +34,28 @@
     <ListView
         android:id="@+id/noteListView"
         android:layout_width="350dp"
-        android:layout_height="600dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="480dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="135dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#DEA049"
+        android:fontFamily="casual"
+        android:onClick="back"
+        android:text="@string/btn_back"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:icon="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteListView" />
 
     <TextView
         android:id="@+id/noData"

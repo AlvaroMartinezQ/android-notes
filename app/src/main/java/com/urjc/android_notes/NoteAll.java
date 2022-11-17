@@ -1,6 +1,8 @@
 package com.urjc.android_notes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -62,6 +64,11 @@ public class NoteAll extends GenericValues {
     public static void displayNoData() {
         noData.setText(R.string.txt_create_note_first);
         noData.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stars, 0, 0, 0);
+    }
+
+    public void back(View view) {
+        Intent home = new Intent(this, NotesHome.class);
+        startActivity(home);
     }
 
 }

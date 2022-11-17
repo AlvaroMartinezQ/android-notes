@@ -23,4 +23,9 @@ public class NotesHome extends GenericValues {
         Intent newNoteEdit = new Intent(this, NoteNewEdit.class);
         startActivity(newNoteEdit);
     }
+
+    public void back(View view) {
+        Intent mainPage = new Intent(this, MainActivity.class);
+        startActivity(mainPage);
+    }
 }
