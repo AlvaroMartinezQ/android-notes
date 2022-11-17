@@ -10,10 +10,13 @@
     <string name="btn_all_notes">All notes</string>
     <string name="btn_add">Add</string>
     <string name="btn_back">Back</string>
+    <string name="btn_edit">Edit</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
     <string name="txt_edit">New and edit notes</string>
     <string name="txt_all">All notes</string>
+    <string name="txt_view">View note</string>
+    <string name="txt_create_note_first">Create a new note first!</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>

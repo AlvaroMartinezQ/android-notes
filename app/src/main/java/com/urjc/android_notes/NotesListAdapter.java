@@ -40,7 +40,7 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
             convertView = layoutInflater.inflate(R.layout.all_notes_list, null);
 
             TextView number = convertView.findViewById(R.id.number);
-            number.setText(position + 1 + ".");
+            number.setText(position + 1 + "."); // Does not require translation
             TextView title = convertView.findViewById(R.id.note_title);
             title.setText(notes.get(position).title);
             ImageView editBtn = convertView.findViewById(R.id.edit);
@@ -61,8 +61,11 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
             viewBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // Navigate to the view tab
-                    // TODO: view tab
+                    // Navigate to the view Activity
+                    Intent viewNote = new Intent(view.getContext(), NoteView.class);
+                    viewNote.putExtra("NOTE", notes.get(position));
+                    viewNote.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    view.getContext().startActivity(viewNote);
                 }
             });
 
@@ -74,7 +77,6 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
                     NoteDAO nd = db.noteDao();
                     nd.deleteNote(notes.get(position));
                     NoteAll.removeNote(position);
-                    // db.close();
                 }
             });
         }

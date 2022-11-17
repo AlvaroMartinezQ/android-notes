@@ -25,12 +25,19 @@ public class NoteAll extends GenericValues {
 
         // Get the layout references
         noteList = findViewById(R.id.noteListView);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        fetchData();
+    }
+
+    private void fetchData() {
         // Get the database & notes
         NotesRDatabase db = NotesRDatabase.getDatabase(this.getApplicationContext());
         NoteDAO nd = db.noteDao();
         notes = new ArrayList<>(nd.getAllNotes());
-        // db.close();
 
         if(notes.size() > 0) {
             // Display notes only if list size is greater than 0
@@ -53,7 +60,7 @@ public class NoteAll extends GenericValues {
     }
 
     public static void displayNoData() {
-        noData.setText("Create a new note first!");
+        noData.setText(R.string.txt_create_note_first);
         noData.setCompoundDrawablesWithIntrinsicBounds(R.drawable.stars, 0, 0, 0);
     }
 

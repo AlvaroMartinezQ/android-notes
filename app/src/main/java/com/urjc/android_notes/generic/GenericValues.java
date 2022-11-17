@@ -15,18 +15,14 @@ import com.urjc.android_notes.database.NotesRDatabase;
 
 public class GenericValues extends AppCompatActivity {
 
-    // NotesRDatabase db = Room.databaseBuilder(getApplicationContext(), NotesRDatabase.class, "notes_db").build();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>\tNotes App</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>\tNOTES APP</font>"));
         getSupportActionBar().setIcon(R.drawable.app_icon);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#DEA049")));
-        // NoteDAO nd = db.noteDao();
-        // nd.getAllNotes();
     }
 
     public void toastIt(String text) {
