@@ -18,6 +18,13 @@
     <string name="txt_all">All notes</string>
     <string name="txt_view">View note</string>
     <string name="txt_create_note_first">Create a new note first!</string>
+    <string name="txt_create_account">Create an account</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_create_acc">Create account</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_request_login">User created, now login</string>
+    <string name="txt_delete_acc">Delete account</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>
