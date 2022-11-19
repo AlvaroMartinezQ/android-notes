@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.urjc.android_notes.dao.NoteDAO;
@@ -11,11 +12,16 @@ import com.urjc.android_notes.database.NotesRDatabase;
 import com.urjc.android_notes.generic.GenericValues;
 import com.urjc.android_notes.models.Note;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NoteView extends GenericValues {
 
     private Note note;
     private TextView title, description, date;
     private ImageView delete;
+    private ListView tagList;
+    private TagListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,13 @@ public class NoteView extends GenericValues {
             date.setText(note.dateCreated);
             if (note.tags != "") {
                 // Render the tag list
+                ArrayList<String> tags = new ArrayList<>();
+                for (String s: note.tags.trim().split("\\s+")) {
+                    tags.add(s);
+                }
+                tagList = findViewById(R.id.tagListView);
+                adapter = new TagListAdapter(getApplicationContext(), tags);
+                tagList.setAdapter(adapter);
             }
 
             delete.setOnClickListener(new View.OnClickListener() {
