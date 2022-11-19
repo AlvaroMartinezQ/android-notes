@@ -26,6 +26,10 @@ public class MainActivity extends GenericValues {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("loggedIn", "FALSE");
+
         load();
     }
 
@@ -37,6 +41,10 @@ public class MainActivity extends GenericValues {
             // If the user account has not been initialized request
             // the user to create a new account
             loginBtn.setText(R.string.txt_create_account);
+        } else {
+            if (sp.getString("loggedIn", "").equals("TRUE")) {
+                loadWelcome(sp);
+            }
         }
     }
 
@@ -51,6 +59,7 @@ public class MainActivity extends GenericValues {
                 editor.putString("username", username.getText().toString());
                 // This password should be encrypted - will leave it as is for testing purposes
                 editor.putString("password", password.getText().toString());
+                editor.putString("loggedIn", "TRUE");
                 editor.commit();
                 username.setText("");
                 password.setText("");
@@ -65,9 +74,7 @@ public class MainActivity extends GenericValues {
                     sp.getString("username", "").equals(username.getText().toString()) &&
                             sp.getString("password", "").equals(password.getText().toString())
             ) {
-                setContentView(R.layout.activity_main);
-                welcome = findViewById(R.id.welcome_msg);
-                welcome.setText("Welcome, " + sp.getString("username", ""));
+                loadWelcome(sp);
             } else {
                 toastIt("Invalid credentials");
             }
@@ -77,6 +84,12 @@ public class MainActivity extends GenericValues {
     public void startApp(View view) {
         Intent startApp = new Intent(this, NotesHome.class);
         startActivity(startApp);
+    }
+
+    public void loadWelcome (SharedPreferences sp) {
+        setContentView(R.layout.activity_main);
+        welcome = findViewById(R.id.welcome_msg);
+        welcome.setText("Welcome, " + sp.getString("username", ""));
     }
 
     public void deleteAccount(View view) {
