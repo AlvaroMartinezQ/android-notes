@@ -29,6 +29,7 @@ public class MainActivity extends GenericValues {
         SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("loggedIn", "FALSE");
+        editor.commit();
 
         load();
     }
