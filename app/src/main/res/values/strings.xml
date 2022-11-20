@@ -1,7 +1,7 @@
 <resources>
     <!-- App intro strings -->
     <string name="app_name">My Notes</string>
-    <string name="slogan">Think it... Note it... Save it!</string>
+    <string name="slogan">Think it… Note it… Save it!</string>
     <string name="slogan_name">NOTES APP</string>
     <!-- Button strings -->
     <string name="btn_start">Start</string>
@@ -25,6 +25,10 @@
     <string name="txt_login">Login</string>
     <string name="txt_request_login">User created, now login</string>
     <string name="txt_delete_acc">Delete account</string>
+    <string name="txt_searches">Search for your notes</string>
+    <string name="txt_searches_options">Select an option to filter by:</string>
+    <string name="txt_searches_input">Data</string>
+    <string name="txt_search">Search</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>
