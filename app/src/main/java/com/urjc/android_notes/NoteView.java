@@ -84,6 +84,7 @@ public class NoteView extends GenericValues {
     public void goBack(View view) {
         Intent allNotes = new Intent(this, NoteAll.class);
         startActivity(allNotes);
+        finish();
     }
 
 }

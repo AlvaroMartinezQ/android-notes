@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.urjc.android_notes.dao.NoteDAO;
 import com.urjc.android_notes.database.NotesRDatabase;
@@ -41,21 +44,22 @@ public class NoteAll extends GenericValues {
         NoteDAO nd = db.noteDao();
         notes = new ArrayList<>(nd.getAllNotes());
 
+        noData = findViewById(R.id.noData);
+
         if(notes.size() > 0) {
             // Display notes only if list size is greater than 0
             adapter = new NotesListAdapter(getApplicationContext(), notes);
             noteList.setAdapter(adapter);
-
         } else {
             // Display a message if no notes exist in the app
-            noData = findViewById(R.id.noData);
             displayNoData();
         }
     }
 
-    public static void removeNote(int position) {
+    public static void removeNote(@NonNull View view, int position) {
         notes.remove(position);
-        adapter.notifyDataSetChanged();
+        adapter = new NotesListAdapter(view.getContext(), notes);
+        noteList.setAdapter(adapter);
         if (notes.size() <= 0) {
             displayNoData();
         }

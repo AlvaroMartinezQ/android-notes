@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -75,8 +76,9 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
                     // Remove the item if clicked
                     NotesRDatabase db = NotesRDatabase.getDatabase(view.getContext());
                     NoteDAO nd = db.noteDao();
-                    nd.deleteNote(notes.get(position));
-                    NoteAll.removeNote(position);
+                    Note toDelete = notes.get(position);
+                    nd.deleteNote(toDelete);
+                    NoteAll.removeNote(view, position);
                 }
             });
         }
