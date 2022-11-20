@@ -73,7 +73,7 @@ public class NoteNewEdit extends GenericValues {
             addNote.setBackgroundColor(Color.parseColor("#DEA049"));
         }
 
-        adapter = new TagListAdapter(getApplicationContext(), tags);
+        adapter = new TagListAdapter(getApplicationContext(), tags, false);
         tagList.setAdapter(adapter);
 
         addTagBtn.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +136,8 @@ public class NoteNewEdit extends GenericValues {
             // Redirect to all notes view
             Intent allNotes = new Intent(this, NoteAll.class);
             startActivity(allNotes);
+            // Finish this activity
+            finish();
         } else {
             // Inform of bad / empty parameters
             toastIt("Please complete all values.");

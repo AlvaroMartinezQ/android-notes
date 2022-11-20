@@ -18,11 +18,13 @@ public class TagListAdapter extends ArrayAdapter<String> {
 
     ArrayList<String> tags;
     Context context;
+    Boolean hideDelete;
 
-    public TagListAdapter(Context context, ArrayList<String> items) {
+    public TagListAdapter(Context context, ArrayList<String> items, boolean hideDelete) {
         super(context, R.layout.tag_list, items);
         this.tags = items;
         this.context = context;
+        this.hideDelete = hideDelete;
     }
 
     @NonNull
@@ -44,13 +46,17 @@ public class TagListAdapter extends ArrayAdapter<String> {
 
             // Delete button and its onClick method
             ImageView deleteBtn = convertView.findViewById(R.id.remove);
-            deleteBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Remove the item if clicked
-                    NoteNewEdit.removeTag(position);
-                }
-            });
+            if (!hideDelete) {
+                deleteBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Remove the item if clicked
+                        NoteNewEdit.removeTag(position);
+                    }
+                });
+            } else {
+                deleteBtn.setVisibility(View.GONE);
+            }
         }
         return convertView;
     }

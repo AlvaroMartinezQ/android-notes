@@ -46,7 +46,7 @@ public class NoteView extends GenericValues {
                     tags.add(s);
                 }
                 tagList = findViewById(R.id.tagListView);
-                adapter = new TagListAdapter(getApplicationContext(), tags);
+                adapter = new TagListAdapter(getApplicationContext(), tags, true);
                 tagList.setAdapter(adapter);
             }
 

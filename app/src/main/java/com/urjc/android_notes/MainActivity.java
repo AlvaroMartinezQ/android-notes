@@ -77,6 +77,7 @@ public class MainActivity extends GenericValues {
             ) {
                 loadWelcome(sp);
             } else {
+                password.setText("");
                 toastIt("Invalid credentials");
             }
         }
