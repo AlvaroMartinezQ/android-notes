@@ -60,6 +60,6 @@ public class NoteSearches extends GenericValues {
         }
         adapter = new NotesListAdapter(getApplicationContext(), new ArrayList<>(notes));
         noteList.setAdapter(adapter);
-        toastIt(notes.size() + " notes found");
+        toastIt(notes.size() + " note(s) found");
     }
 }

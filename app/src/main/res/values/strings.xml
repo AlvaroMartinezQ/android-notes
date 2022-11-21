@@ -29,6 +29,13 @@
     <string name="txt_searches_options">Select an option to filter by:</string>
     <string name="txt_searches_input">Data</string>
     <string name="txt_search">Search</string>
+    <string name="txt_help_title">User manual</string>
+    <string-array name="userHelp">
+        <item>Create an account with a username and a password. This will be required to access the app in future logins.</item>
+        <item>Do not forget the password! Otherwise you will not be able to login.</item>
+        <item>On the start screen, press the `Start` button.</item>
+        <item>On the next screen you will be able to: see all notes, create a new note, filter for your notes.</item>
+    </string-array>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>

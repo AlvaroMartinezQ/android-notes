@@ -103,4 +103,9 @@ public class MainActivity extends GenericValues {
         setContentView(R.layout.activity_login);
         load();
     }
+
+    public void toHelp(View view) {
+        Intent help = new Intent(this, UserHelp.class);
+        startActivity(help);
+    }
 }

@@ -53,6 +53,7 @@
         android:layout_height="55dp"
         android:backgroundTint="#007D54"
         android:fontFamily="casual"
+        android:onClick="toHelp"
         android:text="@string/btn_help"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
