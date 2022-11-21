@@ -21,4 +21,13 @@ public interface NoteDAO {
 
     @Delete
     void deleteNote(Note note);
+
+    @Query("SELECT * FROM app_note WHERE title = :title")
+    List<Note> getNotesByTitle(String title);
+
+    @Query("SELECT * FROM app_note WHERE description = :description")
+    List<Note> getNotesByDescription(String description);
+
+    @Query("SELECT * FROM app_note WHERE tags LIKE '%' || :tag || '%'")
+    List<Note> getNotesByTag(String tag);
 }
