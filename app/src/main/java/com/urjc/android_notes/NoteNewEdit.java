@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +37,8 @@ public class NoteNewEdit extends GenericValues {
     static ArrayList<String> tags;
     static TagListAdapter adapter;
 
+    Button addNoteBtn;
+
     EditText newTagText;
     ImageView addTagBtn;
 
@@ -52,6 +55,7 @@ public class NoteNewEdit extends GenericValues {
         tagList = findViewById(R.id.tagListView);
         newTagText = findViewById(R.id.newTag);
         addTagBtn = findViewById(R.id.newTagBtn);
+        addNoteBtn = findViewById(R.id.button_add);
 
         tags = new ArrayList<>();
 
@@ -108,6 +112,7 @@ public class NoteNewEdit extends GenericValues {
         } else {
             Intent home = new Intent(this, NotesHome.class);
             startActivity(home);
+            finish();
         }
     }
 
@@ -132,6 +137,10 @@ public class NoteNewEdit extends GenericValues {
             }
             Note note = new Note(noteTitle, noteDescription, noteTags.trim());
             nd.addNote(note);
+
+            // Play a custom sound
+            MediaPlayer mp = MediaPlayer.create(this, R.raw.save);
+            mp.start();
 
             // Redirect to all notes view
             Intent allNotes = new Intent(this, NoteAll.class);
