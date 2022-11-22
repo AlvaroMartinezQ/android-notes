@@ -151,11 +151,6 @@ public class NoteNewEdit extends GenericValues {
             // Inform of bad / empty parameters
             toastIt("Please complete all values.");
         }
-
-        // DEBUG
-        // List<Note> notes;
-        // notes=nd.getAllNotes();
-        // toastIt(notes.size() + "");
     }
 
 }
