@@ -25,8 +25,6 @@ import com.urjc.android_notes.generic.GenericValues;
 import com.urjc.android_notes.models.Note;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class NoteNewEdit extends GenericValues {
     /* -- Class to create or edit a note -- */

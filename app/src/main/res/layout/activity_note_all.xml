@@ -34,14 +34,14 @@
     <ListView
         android:id="@+id/noteListView"
         android:layout_width="350dp"
-        android:layout_height="480dp"
+        android:layout_height="550dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
-    <Button
+    <!--<Button
         android:id="@+id/button_cancel"
         android:layout_width="135dp"
         android:layout_height="59dp"
@@ -56,6 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noteListView" />
+        -->
 
     <TextView
         android:id="@+id/noData"
