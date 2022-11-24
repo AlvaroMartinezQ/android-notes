@@ -37,6 +37,7 @@
         <item>On the start screen, press the `Start` button.</item>
         <item>On the next screen you will be able to: see all notes, create a new note, filter for your notes.</item>
     </string-array>
+    <string name="txt_img_add">AddTag</string>
     <!-- Input strings -->
     <string name="input_title">Title</string>
     <string name="input_description">Description</string>

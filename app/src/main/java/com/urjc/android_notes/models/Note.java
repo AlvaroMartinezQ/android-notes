@@ -42,5 +42,4 @@ public class Note implements Serializable {
         this.tags = ta;
         this.dateCreated = now.toString();
     }
-
 }
