@@ -36,6 +36,8 @@
         <item>Do not forget the password! Otherwise you will not be able to login.</item>
         <item>On the start screen, press the `Start` button.</item>
         <item>On the next screen you will be able to: see all notes, create a new note, filter for your notes.</item>
+        <item>On the create new notes screen, a note can contain: a title, description and tags. You will be able to filter by these fields and by date of creation of the notes.</item>
+        <item>To visualize all notes click on the All notes button on the home screen. Later on the list you will be able to: see your notes in more detail, modify them or delete them.</item>
     </string-array>
     <string name="txt_img_add">AddTag</string>
     <!-- Input strings -->
