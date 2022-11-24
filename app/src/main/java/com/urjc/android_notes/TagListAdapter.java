@@ -2,6 +2,7 @@ package com.urjc.android_notes;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,8 +51,12 @@ public class TagListAdapter extends ArrayAdapter<String> {
                 deleteBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        // Play a custom sound
+                        MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.delete);
+                        mp.start();
+
                         // Remove the item if clicked
-                        NoteNewEdit.removeTag(position);
+                        NoteNewEdit.removeTag(view, position);
                     }
                 });
             } else {

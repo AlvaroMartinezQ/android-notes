@@ -14,6 +14,7 @@
     <string name="btn_filter">Filter</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
+    <string name="txt_select_operation">Select operation</string>
     <string name="txt_edit">New and edit notes</string>
     <string name="txt_all">All notes</string>
     <string name="txt_view">View note</string>

@@ -1,6 +1,7 @@
 package com.urjc.android_notes;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -58,6 +59,10 @@ public class NoteView extends GenericValues {
                     NoteDAO nd = db.noteDao();
                     nd.deleteNote(note);
 
+                    // Play a custom sound
+                    MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.delete);
+                    mp.start();
+
                     // Navigate to all notes tab
                     Intent noteAll = new Intent(view.getContext(), NoteAll.class);
                     startActivity(noteAll);
@@ -78,12 +83,6 @@ public class NoteView extends GenericValues {
         editNote.putExtra("NOTE", note);
         editNote.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(editNote);
-        finish();
-    }
-
-    public void goBack(View view) {
-        Intent allNotes = new Intent(this, NoteAll.class);
-        startActivity(allNotes);
         finish();
     }
 

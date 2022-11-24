@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.room.Room;
 
 import com.urjc.android_notes.dao.NoteDAO;
@@ -98,9 +99,10 @@ public class NoteNewEdit extends GenericValues {
         adapter.notifyDataSetChanged();
     }
 
-    public static void removeTag(int i) {
-        tags.remove(i);
-        adapter.notifyDataSetChanged();
+    public static void removeTag(@NonNull View view, int position) {
+        tags.remove(position);
+        adapter = new TagListAdapter(view.getContext(), tags, false);
+        tagList.setAdapter(adapter);
     }
 
     public void back(View view) {

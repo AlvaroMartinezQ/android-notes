@@ -105,8 +105,7 @@ public class NoteSearches extends GenericValues implements DatePickerDialog.OnDa
         NoteDAO nd = db.noteDao();
         List<Note> notes = nd.getAllNotes();
         List<Note> filteredNotes = new ArrayList<>();
-        // Search for date
-        int c = 0;
+        // Filter for date note by note
         for (Note note: notes) {
             try {
                 // Get the date and parse it back from String to Date
@@ -116,7 +115,6 @@ public class NoteSearches extends GenericValues implements DatePickerDialog.OnDa
                 cal.setTime(noteDate);
                 // Compare them to the passed ones from the datePicker
                 if (cal.get(Calendar.YEAR) == y && cal.get(Calendar.MONTH) == m && cal.get(Calendar.DAY_OF_MONTH) == d) {
-                    c++;
                     filteredNotes.add(note);
                 }
             } catch (Exception e) {

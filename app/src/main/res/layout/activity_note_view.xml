@@ -55,37 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/noteDescription" />
 
-    <ImageView
-        android:id="@+id/remove"
-        android:layout_width="40sp"
-        android:layout_height="40sp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagListView" />
-
-    <Button
-        android:id="@+id/button_add"
-        android:layout_width="135dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#007D54"
-        android:fontFamily="casual"
-        android:onClick="edit"
-        android:text="@string/btn_edit"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:icon="@drawable/note_edit"
-        app:iconGravity="end"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagListView" />
-
+    <!--
     <Button
         android:id="@+id/button_cancel2"
         android:layout_width="135dp"
@@ -100,6 +70,37 @@
         app:icon="@drawable/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagListView" />
+        -->
+
+    <ImageView
+        android:id="@+id/remove"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagListView" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="135dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="#007D54"
+        android:fontFamily="casual"
+        android:onClick="edit"
+        android:text="@string/btn_edit"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:icon="@drawable/note_edit"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tagListView" />
 

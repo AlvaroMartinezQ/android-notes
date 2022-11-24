@@ -3,6 +3,7 @@ package com.urjc.android_notes;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +80,10 @@ public class NotesListAdapter extends ArrayAdapter<Note> {
                     Note toDelete = notes.get(position);
                     nd.deleteNote(toDelete);
                     NoteAll.removeNote(view, position);
+
+                    // Play a custom sound
+                    MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.delete);
+                    mp.start();
                 }
             });
         }
