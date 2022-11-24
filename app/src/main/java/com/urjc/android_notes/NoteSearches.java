@@ -64,7 +64,6 @@ public class NoteSearches extends GenericValues implements DatePickerDialog.OnDa
     public void search(View view) {
         String spinnerSelection = options.getSelectedItem().toString();
         String userInput = data.getText().toString();
-        toastIt(userInput);
         if (userInput != "") {
             NotesRDatabase db = NotesRDatabase.getDatabase(this.getApplicationContext());
             NoteDAO nd = db.noteDao();
