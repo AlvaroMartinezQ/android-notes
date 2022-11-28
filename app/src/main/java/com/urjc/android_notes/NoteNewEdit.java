@@ -105,17 +105,6 @@ public class NoteNewEdit extends GenericValues {
         tagList.setAdapter(adapter);
     }
 
-    public void back(View view) {
-        if (existingNote != null) {
-            Intent all = new Intent(this, NoteAll.class);
-            startActivity(all);
-        } else {
-            Intent home = new Intent(this, NotesHome.class);
-            startActivity(home);
-            finish();
-        }
-    }
-
     public void saveNote(View view) {
         NotesRDatabase db = NotesRDatabase.getDatabase(this.getApplicationContext());
         NoteDAO nd = db.noteDao();
