@@ -30,4 +30,7 @@ public interface NoteDAO {
 
     @Query("SELECT * FROM app_note WHERE tags LIKE '%' || :tag || '%'")
     List<Note> getNotesByTag(String tag);
+
+    @Query("DELETE FROM app_note")
+    void deleteAllNotes();
 }

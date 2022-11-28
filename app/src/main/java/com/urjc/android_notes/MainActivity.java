@@ -1,18 +1,18 @@
 package com.urjc.android_notes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.urjc.android_notes.dao.NoteDAO;
+import com.urjc.android_notes.database.NotesRDatabase;
 import com.urjc.android_notes.generic.GenericValues;
 
 public class MainActivity extends GenericValues {
@@ -95,13 +95,30 @@ public class MainActivity extends GenericValues {
     }
 
     public void deleteAccount(View view) {
-        SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.remove("username");
-        editor.remove("password");
-        editor.commit();
-        setContentView(R.layout.activity_login);
-        load();
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        builder.setTitle(R.string.txt_delete_acc)
+                .setMessage(R.string.txt_delete_acc_desc)
+                .setPositiveButton(R.string.btn_continue, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Delete the account and notes
+                        NotesRDatabase db = NotesRDatabase.getDatabase(view.getContext());
+                        NoteDAO nd = db.noteDao();
+                        nd.deleteAllNotes();
+                        SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.remove("username");
+                        editor.remove("password");
+                        editor.commit();
+                        setContentView(R.layout.activity_login);
+                        load();
+                    }
+                }).setNegativeButton(R.string.btn_back, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Skip the step and don't do anything
+                    }
+                }).show();
     }
 
     public void toHelp(View view) {

@@ -12,6 +12,7 @@
     <string name="btn_back">Back</string>
     <string name="btn_edit">Edit</string>
     <string name="btn_filter">Filter</string>
+    <string name="btn_continue">Continue</string>
     <!-- Text strings -->
     <string name="txt_welcome">Welcome back!</string>
     <string name="txt_select_operation">Select operation</string>
@@ -26,6 +27,7 @@
     <string name="txt_login">Login</string>
     <string name="txt_request_login">User created, now login</string>
     <string name="txt_delete_acc">Delete account</string>
+    <string name="txt_delete_acc_desc">Deleting your account will delete also all of your notes!</string>
     <string name="txt_searches">Search for your notes</string>
     <string name="txt_searches_options">Select an option to filter by:</string>
     <string name="txt_searches_input">Data</string>
@@ -38,6 +40,7 @@
         <item>On the next screen you will be able to: see all notes, create a new note, filter for your notes.</item>
         <item>On the create new notes screen, a note can contain: a title, description and tags. You will be able to filter by these fields and by date of creation of the notes.</item>
         <item>To visualize all notes click on the All notes button on the home screen. Later on the list you will be able to: see your notes in more detail, modify them or delete them.</item>
+        <item>You can always delete your account on the home screen pressing the delete button. Keep in mind that this will delete all notes!</item>
     </string-array>
     <string name="txt_img_add">AddTag</string>
     <!-- Input strings -->

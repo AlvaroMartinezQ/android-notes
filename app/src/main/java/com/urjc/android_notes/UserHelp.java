@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 import com.urjc.android_notes.generic.GenericValues;
@@ -22,5 +23,6 @@ public class UserHelp extends GenericValues {
         for (String s: textString) {
             userHelp.append(s + "\n\n");
         }
+        userHelp.setMovementMethod(new ScrollingMovementMethod());
     }
 }
