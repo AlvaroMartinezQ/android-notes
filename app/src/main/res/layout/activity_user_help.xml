@@ -42,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:srcCompat="@android:drawable/ic_menu_myplaces" />
+        android:src="@drawable/user_help" />
 
     <TextView
         android:id="@+id/userHelp"
