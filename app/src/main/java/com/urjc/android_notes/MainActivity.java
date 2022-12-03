@@ -23,8 +23,8 @@ public class MainActivity extends GenericValues {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        super.onCreate(savedInstanceState);
 
         SharedPreferences sp = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -32,6 +32,12 @@ public class MainActivity extends GenericValues {
         editor.commit();
 
         load();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 
     public void load() {
@@ -90,6 +96,7 @@ public class MainActivity extends GenericValues {
 
     public void loadWelcome (SharedPreferences sp) {
         setContentView(R.layout.activity_main);
+        activateMusicBtn();
         welcome = findViewById(R.id.welcome_msg);
         welcome.setText("Welcome, " + sp.getString("username", ""));
     }

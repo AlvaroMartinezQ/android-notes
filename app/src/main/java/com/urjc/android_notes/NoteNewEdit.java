@@ -45,8 +45,8 @@ public class NoteNewEdit extends GenericValues {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_new_edit);
+        super.onCreate(savedInstanceState);
 
         titleInput = findViewById(R.id.inputTitle);
         descriptionInput = findViewById(R.id.inputDescription);
@@ -92,6 +92,12 @@ public class NoteNewEdit extends GenericValues {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 
     public void addTag(String tag) {

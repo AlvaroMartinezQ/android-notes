@@ -25,8 +25,8 @@ public class NoteAll extends GenericValues {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_all);
+        super.onCreate(savedInstanceState);
 
         // Get the layout references
         noteList = findViewById(R.id.noteListView);
@@ -36,6 +36,12 @@ public class NoteAll extends GenericValues {
     protected void onStart() {
         super.onStart();
         fetchData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 
     private void fetchData() {

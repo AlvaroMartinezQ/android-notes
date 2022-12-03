@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/menu" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="244dp"
@@ -37,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <Button
         android:id="@+id/buttonStart"
@@ -59,27 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.406" />
-
-    <Button
-        android:id="@+id/buttonHelp"
-        android:layout_width="133dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#007D54"
-        android:fontFamily="casual"
-        android:onClick="toHelp"
-        android:text="@string/btn_help"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:icon="@drawable/question_mark"
-        app:iconGravity="end"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStart"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.271" />
 
     <Button
         android:id="@+id/buttonDeleteAccount"
@@ -99,7 +81,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHelp"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.132" />
+
+    <Button
+        android:id="@+id/buttonHelp"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#007D54"
+        android:fontFamily="casual"
+        android:onClick="toHelp"
+        android:text="@string/btn_help"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/question_mark"
+        app:iconGravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStart"
+        app:layout_constraintVertical_bias="0.106" />
 
     <View
         android:id="@+id/divider"
@@ -110,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/welcome_msg"

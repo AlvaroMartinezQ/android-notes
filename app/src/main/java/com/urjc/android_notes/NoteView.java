@@ -26,8 +26,8 @@ public class NoteView extends GenericValues {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_view);
+        super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -76,6 +76,12 @@ public class NoteView extends GenericValues {
             startActivity(noteAll);
             finish();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 
     public void edit(View view) {

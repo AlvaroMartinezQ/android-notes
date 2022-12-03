@@ -15,8 +15,8 @@ public class UserHelp extends GenericValues {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_help);
+        super.onCreate(savedInstanceState);
         userHelp = findViewById(R.id.userHelp);
         Resources resources = getResources();
         String[] textString = resources.getStringArray(R.array.userHelp);
@@ -24,5 +24,11 @@ public class UserHelp extends GenericValues {
             userHelp.append(s + "\n\n");
         }
         userHelp.setMovementMethod(new ScrollingMovementMethod());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 }

@@ -37,8 +37,8 @@ public class NoteSearches extends GenericValues implements DatePickerDialog.OnDa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_searchs);
+        super.onCreate(savedInstanceState);
 
         options = findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, filters);
@@ -59,6 +59,12 @@ public class NoteSearches extends GenericValues implements DatePickerDialog.OnDa
                 // Should not happen
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activateMusicBtn();
     }
 
     public void search(View view) {

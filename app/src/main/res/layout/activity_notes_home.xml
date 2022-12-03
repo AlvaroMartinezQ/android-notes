@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".NotesHome">
 
+    <include layout="@layout/menu" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="333dp"
@@ -20,25 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <Button
-        android:id="@+id/buttonNewNote"
-        android:layout_width="173dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#DEA049"
-        android:fontFamily="casual"
-        android:onClick="newOrEdit"
-        android:text="@string/btn_new_note"
-        android:textAllCaps="false"
-        android:textColor="#455A64"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:icon="@drawable/note_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAllNotes" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
         android:id="@+id/buttonAllNotes"
@@ -58,13 +42,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.848" />
 
     <Button
         android:id="@+id/buttonFilter"
         android:layout_width="173dp"
         android:layout_height="54dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#DEA049"
         android:fontFamily="casual"
         android:onClick="filter"
@@ -87,5 +71,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintVertical_bias="0.029" />
+
+    <Button
+        android:id="@+id/buttonNewNote"
+        android:layout_width="173dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#DEA049"
+        android:fontFamily="casual"
+        android:onClick="newOrEdit"
+        android:text="@string/btn_new_note"
+        android:textAllCaps="false"
+        android:textColor="#455A64"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/note_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAllNotes" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
